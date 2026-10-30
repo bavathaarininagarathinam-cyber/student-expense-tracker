@@ -1,0 +1,311 @@
+/* ==========================================================================
+   style.css - Modern Student Expense Tracker Stylesheet
+   ========================================================================== */
+
+/* 1. Global Reset & Clean System Typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  background-color: #f0f4f8;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px;
+}
+
+/* 2. Centered Card Container */
+.app-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 3. Coloured Header */
+.header {
+  background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+  color: #ffffff;
+  padding: 26px 20px;
+  border-radius: 18px 18px 0 0;
+  text-align: center;
+  box-shadow: 0 8px 20px -4px rgba(79, 70, 229, 0.3);
+}
+
+.header h1 {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  color: #e0e7ff;
+  font-size: 13px;
+  margin-top: 6px;
+}
+
+/* 4. Total Amount Spent */
+.total-section {
+  background: #ffffff;
+  padding: 22px 20px;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.total-card h2 {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.total-amount {
+  font-size: 36px;
+  font-weight: 800;
+  margin-top: 6px;
+  display: inline-block;
+  background: linear-gradient(135deg, #e11d48, #be123c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 5. Category Spending Breakdown Cards */
+.breakdown-section, .form-section, .list-section {
+  background: #ffffff;
+  padding: 20px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.list-section {
+  border-radius: 0 0 18px 18px;
+  border-bottom: none;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.breakdown-section h2, .form-section h2, .list-header h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.category-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.category-stat-card {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-stat-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.category-stat-amount {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* 6. Form Groups & Inputs */
+.form-group {
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+input, select {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #0f172a;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+  appearance: none;
+}
+
+select {
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 38px;
+  cursor: pointer;
+}
+
+input:focus, select:focus {
+  background-color: #ffffff;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+#add-expense-btn {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
+  transition: all 0.2s ease;
+}
+
+#add-expense-btn:hover {
+  background: linear-gradient(135deg, #4338ca, #3730a3);
+  transform: translateY(-1px);
+}
+
+/* 7. List Header & Filter Dropdown */
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  gap: 12px;
+}
+
+.filter-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.filter-wrapper label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.filter-wrapper select {
+  width: auto;
+  padding: 6px 30px 6px 10px;
+  font-size: 12px;
+  border-radius: 8px;
+  background-size: 12px;
+  background-position: right 10px center;
+}
+
+/* 8. Expense History List */
+.expense-list {
+  list-style: none;
+}
+
+.expense-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.expense-item:last-child {
+  border-bottom: none;
+}
+
+.expense-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.expense-meta {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 9. Category Color Tags */
+.category-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 6px;
+}
+
+.tag-Food { background-color: #ffedd5; color: #c2410c; border: 1px solid #fed7aa; }
+.tag-Travel { background-color: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; }
+.tag-Books { background-color: #f3e8ff; color: #7e22ce; border: 1px solid #e9d5ff; }
+.tag-Fun { background-color: #ffe4e6; color: #be123c; border: 1px solid #fecdd3; }
+.tag-Other { background-color: #f1f5f9; color: #475569; border: 1px solid #e2e8f0; }
+
+.expense-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.expense-amount {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.delete-btn {
+  background-color: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fee2e2;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.delete-btn:hover {
+  background-color: #fee2e2;
+  color: #dc2626;
+  transform: scale(1.08);
+}
+
+.empty-state {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 24px 10px;
+}
+
+@media (max-width: 480px) {
+  body { padding: 12px 8px; }
+  .total-amount { font-size: 30px; }
+  .category-breakdown-grid { grid-template-columns: 1fr; }
+  input, select, #add-expense-btn { font-size: 16px; }
+}
